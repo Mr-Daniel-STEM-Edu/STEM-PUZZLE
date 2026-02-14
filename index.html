@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEM PUZZLE · GLOW EDITION</title>
+  <title>STEM ID · GLOW EDITION</title>
   <!-- CDNs: animations, icons, fonts, confetti -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -348,15 +348,16 @@
 <div class="game-wrapper">
   <!-- START MENU (visible initially) -->
   <div id="startContainer" class="glow-card" style="display: flex;">
-    <div class="start-title pop-in"><i class="fas fa-flask"></i> STEM PUZZLE</div>
+    <div class="start-title pop-in"><i class="fas fa-flask"></i> STEM ID</div>
     <button id="startGameBtn" class="start-btn animate__animated animate__infinite animate__shakeX">▶ START</button>
+    <div style="margin-top: 40px; font-size: 1.4rem; color: #aff; text-shadow: 0 0 10px cyan;">8 STEM questions · score ≥6 to win</div>
   </div>
 
   <!-- GAME CONTAINER (hidden initially) -->
   <div id="gameContainer" class="stem-card" style="display: none;">
     <div class="header">
       <div class="title-section">
-        <span class="stem-puzzle-logo"><i class="fas fa-puzzle-piece"></i> STEM PUZZLE</span>
+        <span class="stem-puzzle-logo"><i class="fas fa-puzzle-piece"></i> STEM ID</span>
       </div>
       <div style="display: flex; align-items: center; gap: 15px;">
         <div class="score-board">
@@ -377,7 +378,7 @@
       <div id="progressFill" class="q-fill" style="width: 5%;"></div>
     </div>
     <!-- question area -->
-    <div id="questionText" class="q-text animate__animated">Loading STEM challenge...</div>
+    <div id="questionText" class="q-text animate__animated">Loading STEM discovery...</div>
     <!-- options grid -->
     <div id="optionsContainer" class="options-grid">
       <!-- JS will inject 4 buttons -->
@@ -394,37 +395,57 @@
     <button id="restartFromResult" class="restart-big"><i class="fas fa-play"></i> PLAY AGAIN</button>
   </div>
 
-  <div class="footer"><span class="highlight">★ STEM PUZZLE ★</span> 20 puzzles · requirements: 15+</div>
+  <div class="footer"><span class="highlight">★ STEM PERSONALITY ★</span> 8 puzzles · requirements: 6+</div>
 </div>
 
 <script>
   (function() {
-    // ----- 20 STEM questions array (vibrant mix) -----
+    // ----- 8 new STEM personality questions (English translation) -----
     const questions = [
-      { question: "What is the hardest natural substance on Earth?", options: ["Diamond", "Gold", "Iron", "Platinum"], correct: 0 },
-      { question: "Which planet is known as the Red Planet?", options: ["Mars", "Venus", "Jupiter", "Saturn"], correct: 0 },
-      { question: "What is the chemical symbol for gold?", options: ["Go", "Gd", "Au", "Ag"], correct: 2 },
-      { question: "What is the value of π (pi) rounded to two decimals?", options: ["3.14", "3.16", "3.12", "3.18"], correct: 0 },
-      { question: "Which part of the cell contains the genetic material?", options: ["Nucleus", "Ribosome", "Mitochondria", "Cytoplasm"], correct: 0 },
-      { question: "What does 'HTTP' stand for?", options: ["HyperText Transfer Protocol", "High Tech Transfer Program", "Hyper Transfer Text Protocol", "Home Tool Transfer Protocol"], correct: 0 },
-      { question: "Which is the smallest prime number?", options: ["0", "1", "2", "3"], correct: 2 },
-      { question: "What is the speed of light in vacuum (approx)?", options: ["300,000 km/s", "150,000 km/s", "1 million km/s", "3,000 km/s"], correct: 0 },
-      { question: "Which blood type is a universal donor?", options: ["O-", "AB+", "A+", "B-"], correct: 0 },
-      { question: "What is the main gas found in Earth's atmosphere?", options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Argon"], correct: 2 },
-      { question: "Which element has the atomic number 1?", options: ["Helium", "Hydrogen", "Oxygen", "Carbon"], correct: 1 },
-      { question: "What is the powerhouse of the cell?", options: ["Nucleus", "Mitochondria", "Ribosome", "Golgi"], correct: 1 },
-      { question: "Which programming language is known for web interactivity?", options: ["Python", "Java", "JavaScript", "C++"], correct: 2 },
-      { question: "What does CPU stand for?", options: ["Central Processing Unit", "Computer Personal Unit", "Central Process Unit", "Central Programming Unit"], correct: 0 },
-      { question: "Which is a renewable energy source?", options: ["Coal", "Natural Gas", "Solar", "Nuclear"], correct: 2 },
-      { question: "What is the largest organ in the human body?", options: ["Heart", "Liver", "Skin", "Brain"], correct: 2 },
-      { question: "What is the square root of 64?", options: ["6", "7", "8", "9"], correct: 2 },
-      { question: "Which planet has the most moons?", options: ["Earth", "Mars", "Jupiter", "Saturn"], correct: 3 }, // Saturn (82) / Jupiter (79) – but commonly Saturn, we'll pick Saturn
-      { question: "What is the chemical formula for table salt?", options: ["NaCl", "KCl", "H2O", "CO2"], correct: 0 },
-      { question: "Which year did the first manned moon landing occur?", options: ["1965", "1969", "1972", "1958"], correct: 1 }
+      { 
+        question: "When you face a problem in your daily life, your first thought is:",
+        options: ["Create a design or device to solve it", "Use an app or program a digital solution", "Understand the scientific reason behind the problem first"],
+        correct: 2  // scientific approach
+      },
+      { 
+        question: "The activity you enjoy the most:",
+        options: ["Assembling and putting together tools", "Writing code or trying a new program", "Conducting an experiment and analyzing its results"],
+        correct: 1  // coding/programming
+      },
+      { 
+        question: "If you enter a modern lab, you are most attracted to:",
+        options: ["3D printers and engineering tools", "Computers and robots", "Measurement and chemical analysis tools"],
+        correct: 0  // engineering tools
+      },
+      { 
+        question: "Which subject arouses your curiosity the most?",
+        options: ["Applied physics", "Computer science", "Chemistry or biology"],
+        correct: 2  // life sciences
+      },
+      { 
+        question: "If you are asked to do a school project, you choose:",
+        options: ["Building a model of a bridge or a robot", "Designing an application that serves students", "Doing research on an environmental problem"],
+        correct: 0  // hands-on building
+      },
+      { 
+        question: "In a team, you prefer your role to be:",
+        options: ["Designer and executor", "Programmer or developer", "Analyst and researcher"],
+        correct: 1  // developer
+      },
+      { 
+        question: "The thing that gives you the most satisfaction:",
+        options: ["Seeing a model you built with your own hands work", "Running a program you wrote yourself", "Discovering the result of an experiment after long analysis"],
+        correct: 2  // discovery
+      },
+      { 
+        question: "Your future dream is closest to:",
+        options: ["An engineer developing major projects", "A technology or AI developer", "A scientist discovering solutions to real problems"],
+        correct: 0  // engineering
+      }
     ];
 
-    const totalQuestions = questions.length; // 20
-    const MIN_SCORE_TO_MEET = 15;   // STEM requirement threshold
+    const totalQuestions = questions.length; // 8
+    const MIN_SCORE_TO_MEET = 6;   // STEM requirement threshold (6 out of 8)
 
     // DOM elements
     const startContainer = document.getElementById('startContainer');
@@ -471,7 +492,7 @@
       answered = false;
       const q = questions[index];
       questionEl.innerText = q.question;
-      questionEl.classList.add('animate__animated');
+      questionEl.classList.add('animate__animated', 'animate__fadeInLeft');
       setTimeout(() => questionEl.classList.remove('animate__animated', 'animate__fadeInLeft'), 500);
 
       // Update progress bar (each question = 100%/total)
@@ -480,7 +501,7 @@
       // Update options
       if (optionButtons.length === 0) {
         // create buttons if not exist
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 3; i++) {  // each question has 3 options (A, B, C)
           const btn = document.createElement('button');
           btn.className = 'option';
           btn.setAttribute('data-index', i);
@@ -562,8 +583,8 @@
       resultContainer.style.display = 'flex';
 
       const meetReq = score >= MIN_SCORE_TO_MEET;
-      resultMainMsg.innerText = meetReq ? '🌈 STEM ACHIEVED! 🌈' : '🔬 KEEP EXPLORING';
-      resultSubMsg.innerText = `You scored ${score} / ${totalQuestions}  •  ${meetReq ? 'REQUIREMENTS MET' : 'STEM requirements not met (need 15+)'}`;
+      resultMainMsg.innerText = meetReq ? '🌈 STEM ALIGNED! 🌈' : '🔬 KEEP EXPLORING';
+      resultSubMsg.innerText = `You scored ${score} / ${totalQuestions}  •  ${meetReq ? 'REQUIREMENTS MET' : 'STEM requirements not met (need 6+)'}`;
 
       if (meetReq) {
         confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
@@ -618,16 +639,11 @@
     });
 
     // Initialize: show start menu, game hidden, result hidden
-    // Already done via inline style, but ensure correct display
     startContainer.style.display = 'flex';
     gameContainer.style.display = 'none';
     resultContainer.style.display = 'none';
 
-    // Pre-create option buttons? Not necessary, will be created on first load.
-    // But to avoid empty container, we can let loadQuestion create them.
-    // However we need to reset optionButtons array when restarting
-    // We'll handle in resetAndStartGame: loadQuestion will recreate if needed.
-    // We'll also clear optionsContainer on init to be safe.
+    // Clear options container and prepare for first load
     optionsContainer.innerHTML = '';
     optionButtons = [];
   })();
